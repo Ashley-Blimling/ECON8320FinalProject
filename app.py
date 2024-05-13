@@ -351,7 +351,7 @@ def main():
   year = st.slider("Select Year:", 2010, 2023)
   month = st.slider("Select Month:", 1, 12)
 
-  df = data.generate_data()
+  df = processData(year, month)
 
   selectedCity = st.selectbox("Select City:", list(cities.values()))
   cityCode = list(cities.keys())[list(cities.values()).index(selectedCity)]
