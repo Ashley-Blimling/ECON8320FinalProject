@@ -407,7 +407,7 @@ def plotPieCharts(data):
 def plotBoxWhisker(data):
     st.subheader("Hours Usually Worked:")
     fig, ax = plt.subplots(figsize = (10, 6))
-    sns.boxplot(x = data["PEERNHRO"].astype(int), ax=ax)
+    sns.boxplot(x = data["PEERNHRO"].astype(int), ax = ax, color = "mediumslateblue", whiskerprops = dict(color = "royalblue"), medianprops = dict(color = "green"), capprops = dict(color = "royalblue"))
     ax.set_xlabel("Hours Usually Worked")
     ax.set_xticks(range(0, 81, 5))
     ax.set_xticklabels(range(0, 81, 5))
@@ -433,7 +433,7 @@ def main():
       "16": "\$150,000 or More",
     }
 
-  st.title("How does the number of hours worked at other job(s) vary based on education level and household income?")
+  st.title("Average Work and Family Demographics of Cities in America")
   year = st.slider("Select Year:", 2010, 2023)
   month = st.slider("Select Month:", 1, 12)
 
@@ -460,8 +460,8 @@ def main():
       st.subheader("Average Hourly Pay Rate:")
       st.write(f"${avgEarnings:.2f}")
 
-      plotBarChart(df)
       plotBoxWhisker(df)
+      plotBarChart(df)
       
     with col2:
       modeIncomeLevel = df["HEFAMINCLabel"].mode().iloc[0]
