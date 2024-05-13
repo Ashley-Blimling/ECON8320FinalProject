@@ -1,3 +1,4 @@
+import data
 import requests
 import numpy as np
 import pandas as pd
@@ -350,7 +351,7 @@ def main():
   year = st.slider("Select Year:", 2010, 2023)
   month = st.slider("Select Month:", 1, 12)
 
-  df = processData(year, month)
+  df = data.generate_data()
 
   selectedCity = st.selectbox("Select City:", list(cities.values()))
   cityCode = list(cities.keys())[list(cities.values()).index(selectedCity)]
