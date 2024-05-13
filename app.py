@@ -1,9 +1,9 @@
-import data
 import requests
 import numpy as np
 import pandas as pd
 import seaborn as sns
 import streamlit as st
+from data import processData
 import matplotlib.pyplot as plt
 from json.decoder import JSONDecodeError
 
