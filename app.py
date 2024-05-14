@@ -9,7 +9,7 @@ from json.decoder import JSONDecodeError
 
 #This code actually generates my dashboard.
 
-  cities = { #This code transforms the numbers provided by the GTCBSA variable into meaningful outcomes.
+cities = { #This code transforms the numbers provided by the GTCBSA variable into meaningful outcomes. I tried to move it to my data.py file, but my app got mad at me so I just put it back here.
   "33660": "Mobile, AL",
   "17420": "Cleveland, TN",
   "27100": "Jackson, MI",
@@ -270,7 +270,7 @@ from json.decoder import JSONDecodeError
   "16700": "Charleston-North Charleston, SC",
   "44700": "Stockton-Lodi, CA",
   "11460": "Ann Arbor, MI"
-  }
+}
 
 def plotBoxWhisker(data):  #This code creates my box and whisker plot for hours usually worked..
     st.subheader("Hours Usually Worked:")
