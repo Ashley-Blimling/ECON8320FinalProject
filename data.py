@@ -4,7 +4,7 @@ import pandas as pd
 #This is how I will get my data for my dashboard each month.
 
 def dataURL(year, month, city=None, key="d8414676496c9d829cf648e2d51701e2f415548e"): #This code generates the URL I need for all of my variables.
-    monthAbbr = {
+    monthAbbr = { #This code lets the URL read the month numbers that python asks for.
         1: "jan", 2: "feb", 3: "mar", 4: "apr", 5: "may", 6: "jun",
         7: "jul", 8: "aug", 9: "sep", 10: "oct", 11: "nov", 12: "dec"
     }
