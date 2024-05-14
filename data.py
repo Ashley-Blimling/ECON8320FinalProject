@@ -32,7 +32,7 @@ def dataURL(year, month, city=None, key="d8414676496c9d829cf648e2d51701e2f415548
 #PTERNH1O = Earnings-hourly pay rate,amount
 
 def processData(year, month):
-    incomeLabels = { #This code transforms the numbers provided by the HEFAMINC variable into meaningful outcomes. The backslashes keep the dollar signs from messing up my formatting.
+  incomeLabels = { #This code transforms the numbers provided by the HEFAMINC variable into meaningful outcomes. The backslashes keep the dollar signs from messing up my formatting.
     "1": "Less Than \$5,000",
     "2": "\$5,000 To \$7,499",
     "3": "\$7,500 To \$9,999",
