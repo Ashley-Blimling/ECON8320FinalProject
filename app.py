@@ -272,7 +272,7 @@ cities = { #This code transforms the numbers provided by the GTCBSA variable int
   "11460": "Ann Arbor, MI"
 }
 
-def plotBoxWhisker(data):  #This code creates my box and whisker plot for hours usually worked..
+def plotBoxWhisker(data):  #This code creates my box and whisker plot for Hours Usually Worked.
     st.subheader("Hours Usually Worked:")
     fig, ax = plt.subplots(figsize = (10, 6))
     sns.boxplot(x = data["PEERNHRO"].astype(int), ax = ax, color = "mediumslateblue", whiskerprops = dict(color = "royalblue"), medianprops = dict(color = "green"), capprops = dict(color = "royalblue"))
@@ -281,7 +281,7 @@ def plotBoxWhisker(data):  #This code creates my box and whisker plot for hours 
     ax.set_xticklabels(range(0, 81, 5))
     st.pyplot(fig)
 
-def plotBarChart(data): #This code creates my bar chart for hours worked at a second job by education level.
+def plotBarChart(data): #This code creates my bar chart for Hours Worked at a Second Job by Education Level.
   st.subheader("Hours Worked at a Second Job by Education Level:")
   educationOrder = ["Less Than 1st Grade", "1st,2nd,3rd Or 4th Grade", "5th Or 6th Grade", "7th Or 8th Grade", "9th Grade", "10th Grade", "11th Grade", "12th Grade No Diploma", "High School Grad-Diploma Or Equiv (GED)", "Some College But No Degree", "Associate Degree-Occupational/Vocational", "Associate Degree-Academic Program", "Bachelor's Degree", "Master's Degree", "Professional School Degree", "Doctorate Degree"] #This orders my x-axis tick marks, because they were all out of order.
   hoursOrder = [0, 10, 20, 30, 40] #This orders my y-axis tick marks, because they were all out of order.
