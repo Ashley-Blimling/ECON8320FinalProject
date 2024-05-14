@@ -5,6 +5,8 @@ import seaborn as sns
 import streamlit as st
 from data import processData
 import matplotlib.pyplot as plt
+from data import processData, cities
+from data import processData, incomeLabels
 from json.decoder import JSONDecodeError
 
 #This code actually generates my dashboard.
