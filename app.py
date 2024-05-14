@@ -330,6 +330,25 @@ def plotPieCharts(data): #This code creates my pie charts.
   st.pyplot(fig)
 
 def main():  #This code generates and orders my dashboard.
+  incomeLabels = { #This code transforms the numbers provided by the HEFAMINC variable into meaningful outcomes. The backslashes keep the dollar signs from messing up my formatting. I also tried to move this to my data.py file, but my app got mad at me again so I just put it back here.
+    "1": "Less Than \$5,000",
+    "2": "\$5,000 To \$7,499",
+    "3": "\$7,500 To \$9,999",
+    "4": "\$10,000 To \$12,499",
+    "5": "\$12,500 To \$14,999",
+    "6": "\$15,000 To \$19,999",
+    "7": "\$20,000 To \$24,999",
+    "8": "\$25,000 To \$29,999",
+    "9": "\$30,000 To \$34,999",
+    "10": "\$35,000 To \$39,999",
+    "11": "\$40,000 To \$49,999",
+    "12": "\$50,000 To \$59,999",
+    "13": "\$60,000 To \$74,999",
+    "14": "\$75,000 To \$99,999",
+    "15": "\$100,000 To \$149,999",
+    "16": "\$150,000 or More",
+  }
+
   st.title("Average Work and Family Demographics of Cities in America")
   year = st.slider("Select Year:", 2010, 2023) #This code lets people select what year they want information for.
   month = st.slider("Select Month:", 1, 12) #This code lets people select what month they want information for.

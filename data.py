@@ -32,25 +32,6 @@ def dataURL(year, month, city=None, key="d8414676496c9d829cf648e2d51701e2f415548
 #PTERNH1O = Earnings-hourly pay rate,amount
 
 def processData(year, month):
-  incomeLabels = { #This code transforms the numbers provided by the HEFAMINC variable into meaningful outcomes. The backslashes keep the dollar signs from messing up my formatting.
-    "1": "Less Than \$5,000",
-    "2": "\$5,000 To \$7,499",
-    "3": "\$7,500 To \$9,999",
-    "4": "\$10,000 To \$12,499",
-    "5": "\$12,500 To \$14,999",
-    "6": "\$15,000 To \$19,999",
-    "7": "\$20,000 To \$24,999",
-    "8": "\$25,000 To \$29,999",
-    "9": "\$30,000 To \$34,999",
-    "10": "\$35,000 To \$39,999",
-    "11": "\$40,000 To \$49,999",
-    "12": "\$50,000 To \$59,999",
-    "13": "\$60,000 To \$74,999",
-    "14": "\$75,000 To \$99,999",
-    "15": "\$100,000 To \$149,999",
-    "16": "\$150,000 or More",
-  }
-
   educationLabels = { #This code transforms the numbers provided by the PEEDUCA variable into meaningful outcomes.
     "31": "Less Than 1st Grade",
     "32": "1st,2nd,3rd Or 4th Grade",
