@@ -299,31 +299,31 @@ def plotPieCharts(data): #This code creates my pie charts.
   st.subheader("Family Demographics Overview:")
 
   st.write("Type of Family:")
+  fig, ax = plt.subplots()
   pie_data = data["HRHTYPELabel"].value_counts(normalize = True)
   labels = pie_data.index
   sizes = pie_data.values
   labels = [label if size >= 0.03 else "" for label, size in zip(labels, sizes)]
   pie_data.plot.pie(autopct = lambda pct: f"{pct:.1f}%" if pct >= 3 else "", labels = labels, ax = ax) #I took out the labels for any piece of the pie under 3%, because they were too close together, making them unreadable.
-  ax.set_ylabel("")
   st.pyplot(fig)
 
   st.write("Number of Members in Families:")
+  fig, ax = plt.subplots()
   pie_data = data["HRNUMHOU"].value_counts(normalize=True)
   labels = pie_data.index
   sizes = pie_data.values
   labels = [f"{label} Member" if label == 1 else f"{label} Members" for label in labels]
   labels = [label if size >= 0.03 else "" for label, size in zip(labels, sizes)]
   pie_data.plot.pie(autopct = lambda pct: f"{pct:.1f}%" if pct >= 3 else "", labels = labels, ax = ax)
-  ax.set_ylabel("")
   st.pyplot(fig)
 
   st.write("Presence of Children by Age Group:")
+  fig, ax = plt.subplots()
   pie_data = data["PRCHLDLabel"].value_counts(normalize=True)
   labels = pie_data.index
   sizes = pie_data.values
   labels = [label if size >= 0.03 else "" for label, size in zip(labels, sizes)]
   pie_data.plot.pie(autopct = lambda pct: f"{pct:.1f}%" if pct >= 3 else "", labels = labels, ax = ax)
-  ax.set_ylabel("")
   st.pyplot(fig)
 
 def main():  #This code generates and orders my dashboard.
@@ -375,16 +375,16 @@ def main():  #This code generates and orders my dashboard.
       st.subheader("Average Hourly Pay Rate:")
       st.write(f"${avgEarnings:.2f}")
 
-      #These codes display the average family income.
-      modeIncomeLevel = df["HEFAMINCLabel"].mode().iloc[0]
-      st.subheader("Average Family Income:")
-      st.write(modeIncomeLevel)
-
       #This code puts my charts in the left column.
       plotBoxWhisker(df)
       plotBarChart(df)
 
     with col2: #Right Column
+      #These codes display the average family income.
+      modeIncomeLevel = df["HEFAMINCLabel"].mode().iloc[0]
+      st.subheader("Average Family Income:")
+      st.write(modeIncomeLevel)
+
       #This code puts my charts in the right column.
       plotPieCharts(df)
 
