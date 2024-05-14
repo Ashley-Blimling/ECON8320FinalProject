@@ -375,16 +375,16 @@ def main():  #This code generates and orders my dashboard.
       st.subheader("Average Hourly Pay Rate:")
       st.write(f"${avgEarnings:.2f}")
 
-      #This code puts my charts in the left column.
-      plotBoxWhisker(df)
-      plotBarChart(df)
-
-    with col2: #Right Column
       #These codes display the average family income.
       modeIncomeLevel = df["HEFAMINCLabel"].mode().iloc[0]
       st.subheader("Average Family Income:")
       st.write(modeIncomeLevel)
 
+      #This code puts my charts in the left column.
+      plotBoxWhisker(df)
+      plotBarChart(df)
+
+    with col2: #Right Column
       #This code puts my charts in the right column.
       plotPieCharts(df)
 
