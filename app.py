@@ -298,8 +298,9 @@ def plotBarChart(data): #This code creates my bar chart for hours worked at a se
 def plotPieCharts(data): #This code creates my pie charts.
   st.subheader("Family Demographics Overview:")
 
+  fig, axes = plt.subplots(1, 3, figsize = (18, 6))
+
   st.write("Type of Family:")
-  fig, ax = plt.subplots(figsize = (6, 6))
   pie_data = data["HRHTYPELabel"].value_counts(normalize = True)
   labels = pie_data.index
   sizes = pie_data.values
@@ -309,7 +310,6 @@ def plotPieCharts(data): #This code creates my pie charts.
   st.pyplot(fig)
 
   st.write("Number of Members in Families:")
-  fig, ax = plt.subplots(figsize = (6, 6))
   pie_data = data["HRNUMHOU"].value_counts(normalize=True)
   labels = pie_data.index
   sizes = pie_data.values
@@ -320,7 +320,6 @@ def plotPieCharts(data): #This code creates my pie charts.
   st.pyplot(fig)
 
   st.write("Presence of Children by Age Group:")
-  fig, ax = plt.subplots(figsize = (6, 6))
   pie_data = data["PRCHLDLabel"].value_counts(normalize=True)
   labels = pie_data.index
   sizes = pie_data.values
